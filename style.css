@@ -1,0 +1,234 @@
+:root {
+    --clr-primary-700: hsl(0, 93%, 68%);
+    --clr-primary-400: hsl(0, 36%, 70%);
+    --clr-primary-300: hsl(0, 36%, 95%);
+    --clr-primary-100: hsl(0, 36%, 96%);
+    --clr-neutral-100: hsl(0, 6%, 24%);
+
+    --linear-gradient-100: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+    --linear-gradient-400: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    --fs-400: 1rem;
+    --fs-900: 2.6rem;
+    --ff-primary: 'Josefin Sans', sans-serif;
+    --fw-regular: 300;
+    --fw-semi-bold: 400;
+    --fw-bold: 600;
+}
+
+@media (min-width: 725px) {
+    :root {
+        --fs-900: 3.5rem;
+    }
+}
+
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+h1, p, input, button, textarea, select {
+    font: inherit;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-400);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    place-items: center;
+}
+
+
+/* STYLE */
+
+.grid-main {
+    display: grid;
+    gap: 1.9rem;
+    place-items: center;
+    max-width: 375px;
+    background-color: white;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+@media (min-width: 725px) {
+    .grid-main {
+        background: url("images/bg-pattern-desktop.svg") no-repeat center/cover;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        max-width: 1320px;
+        padding-left: 3rem;
+        padding-bottom: 0;
+        justify-items: start;
+
+    }
+}
+
+@media (min-width: 880px) {
+    .grid-main {
+        padding-left: 5rem;
+    }
+}
+
+.logo {
+    scale: 0.7;
+    justify-self: start;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 725px) {
+    .logo {
+        margin: 0;
+        margin-top: 2rem;
+        scale: 1.2;
+    }
+}
+
+.image {
+    object-fit: cover;
+}
+
+@media (min-width: 725px) {
+    .image {
+        grid-column: 2/3;
+        grid-row: 1/5;
+    }
+}
+
+.section-title {
+    font-size: var(--fs-900);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    line-height: 1;
+    opacity: 80%;
+    margin-top: 2rem;
+    max-width: 17rem;
+}
+
+.section-title span {
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+}
+
+.section-info {
+    text-align: center;
+    max-width: 85%;
+    opacity: 70%;
+}
+
+@media (min-width: 725px) {
+    .section-title {
+        text-align: start;
+        align-self: end;
+    }
+
+    .section-info {
+        text-align: start;
+    }
+}
+
+form {
+    width: 100%;
+}
+
+.email-form {
+    border: 1px solid var(--clr-primary-400);
+    display: flex;
+    align-items: center;
+    border-radius: 100vh;
+    opacity: 80%;
+    overflow: hidden;
+    max-width: 85%;
+    margin: auto;
+    background: white;
+}
+
+.email-form input {
+    font-family: inherit;
+    width: 100%;
+    color: var(--clr-neutral-100);
+    border: none;
+    padding-left: 30px;
+    opacity: 100%;
+}
+
+@media (min-width: 725px) {
+    form {
+        align-self: start;
+        padding-bottom: 4rem;
+    }
+
+    .email-form {
+        margin: 0;
+        margin-top: 1rem;
+        align-self: start;
+    }
+}
+
+.email-form input::placeholder {
+    color: var(--clr-primary-400);
+    opacity: 60%;
+    margin: 40px;
+}
+
+.email-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--linear-gradient-400);
+    height: 45px;
+    width: 85px;
+    border-radius: 100vh;
+    outline: none;
+    border: none;
+    box-shadow: -2px 8px 15px var(--clr-primary-300);
+    cursor: pointer;
+}
+
+.email-form button:hover {
+    background-image: var(--linear-gradient-100);
+}
+
+.email-form input:focus-visible {
+    outline: none;
+}
+
+.error-icon {
+    scale: 1.2;
+    margin-right: 15px;
+}
+
+.error-message {
+    color: var(--clr-primary-700);
+    font-size: 0.875rem;
+    margin: 15px 40px;
+}
+
+/* UTILITY FUNCTIONS */
+.hidden {
+    visibility: hidden;
+}
+
+
+
